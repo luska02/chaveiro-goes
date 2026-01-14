@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chaveiro Auto 24h - Soluções Rápidas</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* --- VARIÁVEIS DE COR E CONFIGURAÇÕES GERAIS --- */
+        :root {
+            --bg-dark: #121212;
+            --bg-card: #1e1e1e;
+            --primary-color: #FFC107; /* Amarelo Ouro - Urgência e Automotivo */
+            --primary-hover: #e0a800;
+            --text-white: #ffffff;
+            --text-gray: #b0b0b0;
+            --whatsapp-green: #25D366;
+            --shadow: 0 4px 15px rgba(0,0,0,0.5);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            outline: none;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-white);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            text-transform: uppercase;
+        }
+
+        a { text-decoration: none; }
+
+        /* --- HEADER FLUTUANTE --- */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(18, 18, 18, 0.95);
+            backdrop-filter: blur(5px);
+            padding: 15px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            border-bottom: 2px solid var(--primary-color);
+            box-shadow: var(--shadow);
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            color: var(--text-white);
+            font-weight: bold;
+        }
+        .logo span { color: var(--primary-color); }
+
+        .btn-header {
+            background-color: transparent;
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+            padding: 8px 20px;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .btn-header:hover {
+            background-color: var(--primary-color);
+            color: var(--bg-dark);
+        }
+
+        /* --- HERO SECTION (DESTAQUE) --- */
+        .hero {
+            height: 100vh; /* Ocupa a tela toda */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            padding: 0 20px;
+            /* IMAGEM DE FUNDO: Substitua a URL abaixo pela sua imagem */
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.85)), 
+                        url('https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?q=80&w=2070&auto=format&fit=crop'); 
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+        }
+
+        .hero h1 span {
+            color: var(--primary-color);
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: var(--text-gray);
+            margin-bottom: 30px;
+        }
+
+        /* NÚMERO DE TELEFONE GIGANTE */
+        .phone-display {
+            display: block;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 3rem; /* Bem grande */
+            color: var(--text-white);
+            font-weight: 800;
+            margin-bottom: 30px;
+            text-shadow: 0 0 10px rgba(255, 193, 7, 0.3);
+            transition: 0.3s;
+        }
+        
+        .phone-display:hover {
+            color: var(--primary-color);
+        }
+
+        /* BOTÃO PULSANTE (CTA PRINCIPAL) */
+        .btn-cta {
+            background-color: var(--whatsapp-green);
+            color: white;
+            padding: 18px 40px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            border-radius: 50px;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 0 20px rgba(37, 211, 102, 0.4);
+            animation: pulse 2s infinite;
+            transition: transform 0.2s;
+        }
+
+        .btn-cta:hover {
+            transform: scale(1.05);
+            background-color: #1ebc57;
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+        }
+
+        /* --- SERVIÇOS (CARDS) --- */
+        .services {
+            padding: 80px 5%;
+            background-color: var(--bg-dark);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            font-size: 2rem;
+        }
+        .section-title span { border-bottom: 3px solid var(--primary-color); }
+
+        .cards-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background-color: var(--bg-card);
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            border: 1px solid #333;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            border-color: var(--primary-color);
+            transform: translateY(-5px);
+            box-shadow: 0 5px 20px rgba(255, 193, 7, 0.1);
+        }
+
+        .card i {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        .card h3 {
+            margin-bottom: 10px;
+            font-size: 1.3rem;
+        }
+
+        .card p {
+            color: var(--text-gray);
+            font-size: 0.95rem;
+        }
+
+        /* --- RODAPÉ --- */
+        footer {
+            background-color: #000;
+            padding: 20px;
+            text-align: center;
+            color: var(--text-gray);
+            font-size: 0.8rem;
+            border-top: 1px solid #333;
+        }
+
+        /* --- BOTÃO FLUTUANTE WHATSAPP --- */
+        .floating-wa {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            background-color: var(--whatsapp-green);
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+            z-index: 2000;
+            transition: 0.3s;
+        }
+
+        .floating-wa:hover {
+            transform: scale(1.1);
+            background-color: #1ebc57;
+        }
+
+        /* --- RESPONSIVIDADE (MOBILE) --- */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 1.8rem; }
+            .phone-display { font-size: 2rem; }
+            .btn-cta { width: 100%; justify-content: center; padding: 15px; }
+            .header-nav { display: none; } /* Simplificação mobile */
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            CHAVEIRO<span>GOES</span>
+        </div>
+        <a href="tel:5515996318741" class="btn-header">
+            <i class="fas fa-phone-alt"></i> <span style="display:none;">LIGAR</span> 24H
+        </a>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Problemas com a Chave? <br><span>Resolvemos em Minutos!</span></h1>
+            
+            <p>Atendimento emergencial 24 horas. Carros nacionais e importados.</p>
+            
+            <a href="tel:5515996318741" class="phone-display">
+                (15) 996318741
+            </a>
+
+            <a href="https://wa.me/5511999999999" target="_blank" class="btn-cta">
+                <i class="fab fa-whatsapp"></i> CHAMAR NO WHATSAPP
+            </a>
+        </div>
+    </section>
+
+    <section class="services">
+        <div class="section-title">
+            <h2>Nossos <span>Serviços</span></h2>
+        </div>
+        
+        <div class="cards-container">
+            <div class="card">
+                <i class="fas fa-car-crash"></i>
+                <h3>Abertura de Veículos</h3>
+                <p>Esqueceu a chave dentro? Trancou o carro? Abrimos sem danificar a pintura ou fechadura.</p>
+            </div>
+            
+            <div class="card">
+                <i class="fas fa-key"></i>
+                <h3>Cópias Codificadas</h3>
+                <p>Cópia de chaves com chip transponder para todas as marcas nacionais e importadas.</p>
+            </div>
+
+            <div class="card">
+                <i class="fas fa-microchip"></i>
+                <h3>Chaves Presenciais</h3>
+                <p>Programação e configuração de chaves Smart Key e Start/Stop.</p>
+            </div>
+
+            <div class="card">
+                <i class="fas fa-tools"></i>
+                <h3>Reparo de Telecomando</h3>
+                <p>Troca de bateria, carcaça quebrada e reparo de botões que não funcionam.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 AutoChave Serviços Automotivos. Todos os direitos reservados.</p>
+    </footer>
+
+    <a href="https://wa.me/5511999999999" class="floating-wa" target="_blank" aria-label="Chamar no WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script>
+        // Não é estritamente necessário JS complexo para essa Landing Page,
+        // mas isso garante que a barra de endereços do mobile não atrapalhe a altura "100vh"
+        
+        function setVh() {
+            let vh = window.innerHeight * 0.01;
+            document.documentElement.style.setProperty('--vh', `${vh}px`);
+        }
+        window.addEventListener('resize', setVh);
+        setVh();
+    </script>
+
+</body>
+</html>
