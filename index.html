@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chaveiro Auto 24h - Soluções Rápidas</title>
+    <title>Chaveiro Goes - Soluções Rápidas 24h</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,7 +16,7 @@
         :root {
             --bg-dark: #121212;
             --bg-card: #1e1e1e;
-            --primary-color: #FFC107; /* Amarelo Ouro - Urgência e Automotivo */
+            --primary-color: #FFC107; /* Amarelo Ouro */
             --primary-hover: #e0a800;
             --text-white: #ffffff;
             --text-gray: #b0b0b0;
@@ -31,9 +31,7 @@
             outline: none;
         }
 
-        html {
-            scroll-behavior: smooth;
-        }
+        html { scroll-behavior: smooth; }
 
         body {
             font-family: 'Roboto', sans-serif;
@@ -93,26 +91,22 @@
             color: var(--bg-dark);
         }
 
-        /* --- HERO SECTION (DESTAQUE) --- */
+        /* --- HERO SECTION --- */
         .hero {
-            height: 100vh; /* Ocupa a tela toda */
+            height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
             position: relative;
             padding: 0 20px;
-            /* IMAGEM DE FUNDO: Substitua a URL abaixo pela sua imagem */
             background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.85)), 
                         url('https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?q=80&w=2070&auto=format&fit=crop'); 
             background-size: cover;
             background-position: center;
         }
 
-        .hero-content {
-            max-width: 800px;
-            z-index: 1;
-        }
+        .hero-content { max-width: 800px; z-index: 1; }
 
         .hero h1 {
             font-size: 2.5rem;
@@ -120,9 +114,7 @@
             text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
         }
 
-        .hero h1 span {
-            color: var(--primary-color);
-        }
+        .hero h1 span { color: var(--primary-color); }
 
         .hero p {
             font-size: 1.1rem;
@@ -130,11 +122,10 @@
             margin-bottom: 30px;
         }
 
-        /* NÚMERO DE TELEFONE GIGANTE */
         .phone-display {
             display: block;
             font-family: 'Montserrat', sans-serif;
-            font-size: 3rem; /* Bem grande */
+            font-size: 3rem;
             color: var(--text-white);
             font-weight: 800;
             margin-bottom: 30px;
@@ -142,11 +133,8 @@
             transition: 0.3s;
         }
         
-        .phone-display:hover {
-            color: var(--primary-color);
-        }
+        .phone-display:hover { color: var(--primary-color); }
 
-        /* BOTÃO PULSANTE (CTA PRINCIPAL) */
         .btn-cta {
             background-color: var(--whatsapp-green);
             color: white;
@@ -173,7 +161,7 @@
             100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
         }
 
-        /* --- SERVIÇOS (CARDS) --- */
+        /* --- SERVIÇOS --- */
         .services {
             padding: 80px 5%;
             background-color: var(--bg-dark);
@@ -213,14 +201,47 @@
             margin-bottom: 20px;
         }
 
-        .card h3 {
-            margin-bottom: 10px;
-            font-size: 1.3rem;
+        .card h3 { margin-bottom: 10px; font-size: 1.3rem; }
+        .card p { color: var(--text-gray); font-size: 0.95rem; }
+
+        /* --- NOVA SEÇÃO: LOCAIS DE ATENDIMENTO --- */
+        .locations {
+            padding: 50px 5%;
+            background-color: #151515; /* Leve contraste com o fundo */
+            text-align: center;
+            border-top: 1px solid #333;
         }
 
-        .card p {
+        .locations-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .location-tag {
+            background-color: #222;
+            border: 1px solid #444;
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-size: 0.9rem;
             color: var(--text-gray);
-            font-size: 0.95rem;
+            transition: 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            cursor: default;
+        }
+
+        .location-tag i { color: var(--primary-color); font-size: 0.8rem; }
+
+        .location-tag:hover {
+            border-color: var(--primary-color);
+            color: var(--text-white);
+            transform: scale(1.05);
+            box-shadow: 0 0 10px rgba(255, 193, 7, 0.2);
         }
 
         /* --- RODAPÉ --- */
@@ -233,7 +254,7 @@
             border-top: 1px solid #333;
         }
 
-        /* --- BOTÃO FLUTUANTE WHATSAPP --- */
+        /* --- FLUTUANTE --- */
         .floating-wa {
             position: fixed;
             bottom: 25px;
@@ -257,12 +278,11 @@
             background-color: #1ebc57;
         }
 
-        /* --- RESPONSIVIDADE (MOBILE) --- */
         @media (max-width: 768px) {
             .hero h1 { font-size: 1.8rem; }
             .phone-display { font-size: 2rem; }
             .btn-cta { width: 100%; justify-content: center; padding: 15px; }
-            .header-nav { display: none; } /* Simplificação mobile */
+            .location-tag { font-size: 0.8rem; padding: 8px 15px; }
         }
     </style>
 </head>
@@ -302,7 +322,7 @@
             <div class="card">
                 <i class="fas fa-car-crash"></i>
                 <h3>Abertura de Veículos</h3>
-                <p>Esqueceu a chave dentro? Trancou o carro? Abrimos sem danificar a pintura ou fechadura..</p>
+                <p>Esqueceu a chave dentro? Trancou o carro? Abrimos sem danificar a pintura ou fechadura.</p>
             </div>
             
             <div class="card">
@@ -325,18 +345,44 @@
         </div>
     </section>
 
+    <section class="locations">
+        <div class="section-title">
+            <h2>Locais de <span>Atendimento</span></h2>
+            <p style="color: var(--text-gray); margin-top: 10px;">Encontre um parceiro próximo a você</p>
+        </div>
+        
+        <div class="locations-grid">
+            <div class="location-tag"><i class="fas fa-map-marker-alt"></i> Goiânia (Bruno)</div>
+            <div class="location-tag"><i class="fas fa-map-marker-alt"></i> Florianópolis</div>
+            <div class="location-tag"><i class="fas fa-map-marker-alt"></i> Praia Grande</div>
+            <div class="location-tag"><i class="fas fa-map-marker-alt"></i> Sorocaba</div>
+            <div class="location-tag"><i class="fas fa-map-marker-alt"></i> Belo Horizonte</div>
+            <div class="location-tag"><i class="fas fa-map-marker-alt"></i> SP Zona Sul (Vila Olímpia)</div>
+            <div class="location-tag"><i class="fas fa-map-marker-alt"></i> Balneário Camboriú</div>
+            <div class="location-tag"><i class="fas fa-map-marker-alt"></i> Fortaleza</div>
+            <div class="location-tag"><i class="fas fa-map-marker-alt"></i> Uberlândia</div>
+            <div class="location-tag"><i class="fas fa-map-marker-alt"></i> Curitiba</div>
+            <div class="location-tag"><i class="fas fa-map-marker-alt"></i> Maringá</div>
+            <div class="location-tag"><i class="fas fa-map-marker-alt"></i> Porto Alegre</div>
+            <div class="location-tag"><i class="fas fa-map-marker-alt"></i> Londrina</div>
+            <div class="location-tag"><i class="fas fa-map-marker-alt"></i> Brasília</div>
+            <div class="location-tag"><i class="fas fa-map-marker-alt"></i> Recife</div>
+            <div class="location-tag"><i class="fas fa-map-marker-alt"></i> Palhoça</div>
+            <div class="location-tag"><i class="fas fa-map-marker-alt"></i> Cascavel</div>
+            <div class="location-tag"><i class="fas fa-map-marker-alt"></i> Recreio</div>
+            <div class="location-tag"><i class="fas fa-map-marker-alt"></i> Anápolis</div>
+        </div>
+    </section>
+
     <footer>
-        <p>&copy; 2024 AutoChave Serviços Automotivos. Todos os direitos reservados.</p>
+        <p>&copy; 2026 Chaveiro Goes. Todos os direitos reservados.</p>
     </footer>
 
-    <a href="https://wa.me/5511999999999" class="floating-wa" target="_blank" aria-label="Chamar no WhatsApp">
+    <a href="https://w.app/chaveiro-goes" class="floating-wa" target="_blank" aria-label="Chamar no WhatsApp">
         <i class="fab fa-whatsapp"></i>
     </a>
 
     <script>
-        // Não é estritamente necessário JS complexo para essa Landing Page,
-        // mas isso garante que a barra de endereços do mobile não atrapalhe a altura "100vh"
-        
         function setVh() {
             let vh = window.innerHeight * 0.01;
             document.documentElement.style.setProperty('--vh', `${vh}px`);
